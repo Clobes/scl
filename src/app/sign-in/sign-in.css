@@ -1,0 +1,31 @@
+.page {
+    align-items: center;
+    flex-direction: column;
+  }
+  .form {
+    margin-left: 30;
+    margin-right: 30;
+    flex-grow: 2;
+    vertical-align: middle;
+  }
+
+  .input-field {
+    margin-bottom: 25;
+  }
+  .input {
+    font-size: 18;
+    placeholder-color: #A8A8A8;
+  }
+  .input:disabled {
+    background-color: white;
+    opacity: 0.5;
+  }
+  
+  .btn-primary {
+    margin: 30 5 15 5;
+  }
+  
+  .bold {
+    color: #000000; 
+  }
+  

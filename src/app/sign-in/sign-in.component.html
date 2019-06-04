@@ -1,0 +1,95 @@
+<ActionBar class="action-bar">
+        <Label class="action-bar-title" text="Login"></Label>
+</ActionBar>
+<!-- <FlexboxLayout class="page" rows="auto, auto, auto">
+    <StackLayout class="form">
+        <StackLayout row="0" class="input-field">
+            <TextField [isEnabled]="!processing" hint="Email" ...></TextField>
+        </StackLayout>
+            
+        <StackLayout row="1" class="input-field">
+            <TextField [isEnabled]="!processing" hint="Password" ...></TextField>
+        </StackLayout>
+            
+        <Button row="2" [isEnabled]="!processing" text="Sign Up" (tap)="login()"></Button>
+        <ActivityIndicator row="2"  width="50" height="50" [busy]="processing" color="blue"></ActivityIndicator>
+    </StackLayout>
+</FlexboxLayout> -->
+
+<!-- //////////////// -->
+
+<FlexboxLayout class="page">
+        <StackLayout class="form">
+            <!-- <Image class="logo" src="~/images/logo.png"></Image> -->
+            <!-- <Label class="header" text="APP NAME"></Label> -->
+    
+            <PreviousNextView>
+                <GridLayout rows="auto, auto, auto">
+                    <StackLayout row="0" class="input-field">
+                        <TextField  class="input" hint="Email" [isEnabled]="!processing"
+                            keyboardType="email" autocorrect="false"
+                            autocapitalizationType="none" [(ngModel)]="user.email"
+                            returnKeyType="next" (returnPress)="focusEmail()"></TextField>
+                        <StackLayout class="hr-light"></StackLayout>
+                    </StackLayout>
+    
+                    <StackLayout row="1" class="input-field">
+                        <TextField  #password class="input" [isEnabled]="!processing"
+                            hint="Password" secure="true" [(ngModel)]="user.password"
+                            (returnPress)="focusConfirmPassword()"></TextField>
+                        <StackLayout class="hr-light"></StackLayout>
+                    </StackLayout>    
+                    <ActivityIndicator width="50" height="50" [busy]="processing"  rowSpan="3" color="blue"></ActivityIndicator>
+                </GridLayout>
+            </PreviousNextView>
+    
+            <Button text="Sign In" [isEnabled]="!processing"
+                (tap)="login()" class="btn btn-primary btn-rounded-sm font-weight-bold m-t-20">
+            </Button>
+            
+        </StackLayout>
+    
+    </FlexboxLayout>
+
+<!-- /////////////////// -->
+<!-- <GridLayout rows="auto, auto, rowSpan="0"auto">
+        <StackLayout row="0" class="input-field">
+          <TextField [isEnabled]="!processing" class="input" hint="Email"></TextField>
+        </StackLayout>
+      
+        <StackLayout row="1" class="input-field">
+          <TextField [isEnabled]="!processing" class="input" hint="Password"></TextField>
+        </StackLayout>
+      
+        <Button row="2" [isEnabled]="!processing" class="btn btn-primary" text="Submit" (tap)="login()"></Button>
+      
+        <ActivityIndicator [busy]="processing" color="blue"></ActivityIndicator>
+</GridLayout> -->
+
+
+
+<!-- 
+<ActionBar class="action-bar">
+         <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+        <Label class="action-bar-title" text="Login"></Label>
+    </ActionBar>
+<GridLayout>
+    <ScrollView>
+        <StackLayout>
+            <StackLayout >
+                <StackLayout class="input-field">
+                    <Label text="Email" class="label font-weight-bold m-b-5"></Label>
+                    <TextField class="input" [(ngModel)]="input.email"></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <StackLayout class="">
+                    <Label text="Password" class="label font-weight-bold m-b-5"></Label>
+                    <TextField secure="true" class="input" [(ngModel)]="input.password"></TextField>
+                    <StackLayout class="hr-light"></StackLayout>
+                </StackLayout>
+                <Button class="btn btn-primary btn-rounded-sm font-weight-bold t-18" text="Login" (tap)="login()"></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</GridLayout> -->

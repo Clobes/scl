@@ -1,0 +1,15 @@
+<ActionBar class="action-bar">
+    <NavigationButton (tap)="onBackTap()" android.systemIcon="ic_menu_back"></NavigationButton>
+    <Label class="action-bar-title" text="Tareas"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <ListView *ngIf="!processing" [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <Label [nsRouterLink]="['item', item.callingCodes[0]]" [text]="item.name" class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+    <ActivityIndicator width="50" height="50" [busy]="processing" color="blue"></ActivityIndicator>
+
+</GridLayout>
+
